@@ -22,3 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::controller(SliderController::class)->group(function () {
     Route::get('sliders', 'index');
 });
+
+Route::controller(SliderController::class)->group(function () {
+    Route::get('places', 'index');
+});
