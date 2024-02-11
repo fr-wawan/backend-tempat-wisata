@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\PlaceController;
 use App\Http\Controllers\Api\SliderController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -23,6 +24,6 @@ Route::controller(SliderController::class)->group(function () {
     Route::get('sliders', 'index');
 });
 
-Route::controller(SliderController::class)->group(function () {
+Route::controller(PlaceController::class)->group(function () {
     Route::get('places', 'index');
 });
