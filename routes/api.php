@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\ArticleController;
 use App\Http\Controllers\Api\PlaceController;
+use App\Http\Controllers\Api\QuestionController;
 use App\Http\Controllers\Api\SliderController;
 use App\Http\Controllers\Api\VideoController;
 use Illuminate\Http\Request;
@@ -38,6 +39,10 @@ Route::controller(ArticleController::class)->prefix('articles')->group(function 
     Route::get('/{slug}', 'show');
     Route::get('/comment/{article_id}', 'indexComment');
     Route::post('/comment', 'storeComment');
+});
+
+Route::controller(QuestionController::class)->prefix('questions')->group(function () {
+    Route::get('/', 'index');
 });
 
 Route::controller(VideoController::class)->prefix('videos')->group(function () {
