@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\ArticleController;
 use App\Http\Controllers\Api\PlaceController;
 use App\Http\Controllers\Api\SliderController;
+use App\Http\Controllers\Api\VideoController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -33,4 +34,8 @@ Route::controller(PlaceController::class)->prefix('places')->group(function () {
 Route::controller(ArticleController::class)->prefix('articles')->group(function () {
     Route::get('/', 'index');
     Route::get('/{slug}', 'show');
+});
+
+Route::controller(VideoController::class)->prefix('videos')->group(function () {
+    Route::get('/', 'index');
 });

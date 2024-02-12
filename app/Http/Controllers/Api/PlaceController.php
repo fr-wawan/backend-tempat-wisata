@@ -10,7 +10,7 @@ class PlaceController extends Controller
 {
     public function index()
     {
-        $places = Place::paginate(request('paginate'));
+        $places = Place::orderBy('created_at', 'desc')->paginate(request('paginate'));
 
         return response()->json([
             'data' => $places

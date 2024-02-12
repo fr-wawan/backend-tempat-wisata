@@ -10,7 +10,7 @@ class ArticleController extends Controller
 {
     public function index()
     {
-        $articles = Article::paginate(request('paginate'));
+        $articles = Article::orderBy('created_at', 'desc')->paginate(request('paginate'));
 
         return response()->json([
             'data' => $articles
