@@ -15,6 +15,7 @@ return new class extends Migration
         Schema::create('article_comments', function (Blueprint $table) {
             $table->ulid('id')->primary();
             $table->foreignIdFor(Article::class);
+            $table->string('name');
             $table->text('comment');
             $table->timestamps();
         });

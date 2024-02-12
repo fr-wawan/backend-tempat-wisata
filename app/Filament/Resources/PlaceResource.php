@@ -45,6 +45,9 @@ class PlaceResource extends Resource
                         TextInput::make('address')
                             ->required()
                             ->columnSpanFull(),
+                        Textarea::make('maps')
+                            ->required()
+                            ->columnSpanFull(),
                         RichEditor::make('description')
                             ->required()
                             ->columnSpanFull(),

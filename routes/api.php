@@ -29,11 +29,15 @@ Route::controller(SliderController::class)->group(function () {
 Route::controller(PlaceController::class)->prefix('places')->group(function () {
     Route::get('/', 'index');
     Route::get('/{slug}', 'show');
+    Route::get('/comment/{place_id}', 'indexComment');
+    Route::post('/comment', 'storeComment');
 });
 
 Route::controller(ArticleController::class)->prefix('articles')->group(function () {
     Route::get('/', 'index');
     Route::get('/{slug}', 'show');
+    Route::get('/comment/{article_id}', 'indexComment');
+    Route::post('/comment', 'storeComment');
 });
 
 Route::controller(VideoController::class)->prefix('videos')->group(function () {
