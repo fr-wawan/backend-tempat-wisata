@@ -59,7 +59,7 @@ class VideoResource extends Resource
             ->actions([
                 Tables\Actions\EditAction::make()
                     ->mutateFormDataUsing(function (array $data): array {
-                        $video = str_replace("https://youtu.be", "", $data['link']);
+                        $video = str_replace("https://youtu.be/", "", $data['link']);
 
                         $data['link'] = $video;
 

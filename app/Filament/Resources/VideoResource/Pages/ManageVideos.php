@@ -15,7 +15,7 @@ class ManageVideos extends ManageRecords
         return [
             Actions\CreateAction::make()
                 ->mutateFormDataUsing(function (array $data): array {
-                    $video = str_replace("https://youtu.be", "", $data['link']);
+                    $video = str_replace("https://youtu.be/", "", $data['link']);
 
                     $data['link'] = $video;
 

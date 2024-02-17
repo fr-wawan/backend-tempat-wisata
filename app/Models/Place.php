@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Place extends Model
 {
-    use HasFactory, HasUlids;
+    use HasFactory, HasUlids, HasFactory;
 
     protected $guarded = ['id'];
 
